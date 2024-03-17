@@ -5,7 +5,7 @@ public class Test_2 {
 	public static void main(String[] args)throws Exception
 	{
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection con = DriverManager.getConnection("url","username","password");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sys","username","password");
 		Statement st = con.createStatement();
 		int count = st.executeUpdate("Insert into employee values(id,'name','data','email')");
 		
