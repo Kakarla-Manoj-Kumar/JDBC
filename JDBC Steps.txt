@@ -1,0 +1,37 @@
+JDBC Steps
+-------------------
+
+1) Import Packages.(import java.sql.*;)
+            Before registering the Driver Download the mysql jdbc connector jar file
+            and attach it in build path.
+2) Register the JDBC Drivers.
+
+Class.forName("com.mysql.cj.jdbc.Driver");
+
+3) Open a Connection to a Database.
+
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sys","root","password");
+
+4) Create a Statement Object.
+
+Statement st = con.createStatemnet();
+
+5) Execute a Query and Return a Result Set Object.
+
+ResultSet rs = st.executeQuery("select * from employee");
+
+6) Process the Result Set.
+
+String userdata = "";
+while(rs.next()){
+
+userdata = rs.getInt(1)+ " : "+rs.get.String()+ " : "+rs.getDate(3)+ " : "+rs.getString(4);
+
+System.out.println(userData)
+
+}
+
+7) Close the Conection and Statement.
+
+st.close();
+con.close();
